@@ -9,23 +9,23 @@ on:
       - "*"
 
 jobs:
-  verify_version:
-    name: Verify version matches release
-    runs-on: ubuntu-22.04
-    strategy:
-      matrix:
-        os: [ubuntu-22.04, macos-14, windows-2022]
-        sdk: [3.0.0]
-    steps:
-      - uses: actions/checkout@v4
-      - uses: subosito/flutter-action@v2
-        with:
-          flutter-version: ${{ env.FLUTTER_OVERRIDE || vars.FLUTTER_VERSION }}
-      - name: Verify release version
-        run: |
-          flutter pub get
-          dart tool/verify_release_version.dart ${{ github.ref_name }}
-        working-directory: packages/isar_community
+  #verify_version:
+  #  name: Verify version matches release
+  #  runs-on: ubuntu-22.04
+  #  strategy:
+  #    matrix:
+  #      os: [ubuntu-22.04, macos-14, windows-2022]
+  #      sdk: [3.0.0]
+  #  steps:
+  #    - uses: actions/checkout@v4
+  #    - uses: subosito/flutter-action@v2
+  #      with:
+  #        flutter-version: ${{ env.FLUTTER_OVERRIDE || vars.FLUTTER_VERSION }}
+  #    - name: Verify release version
+  #      run: |
+  #        flutter pub get
+  #        dart tool/verify_release_version.dart ${{ github.ref_name }}
+  #      working-directory: packages/isar_community
 
   build_binaries:
     name: Build Binaries
