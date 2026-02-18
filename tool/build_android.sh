@@ -78,12 +78,12 @@ elif [ "$1" = "armv7" ]; then
   cargo --version
   rustup target add armv7-linux-androideabi --toolchain $RUST_TOOLCHAIN
   rustup run $RUST_TOOLCHAIN cargo build --target armv7-linux-androideabi
-  mv "../../target/armv7-linux-androideabi/release/libisar.so" "../../libisar_android_armv7.so"
+  mv "../../target/armv7-linux-androideabi/debug/libisar.so" "../../libisar_android_armv7.so"
 else
   echo "Building for arm64 architecture"
   rustc --version
   cargo --version
   rustup target add aarch64-linux-android --toolchain $RUST_TOOLCHAIN
   rustup run $RUST_TOOLCHAIN cargo build --target aarch64-linux-android
-  mv "../../target/aarch64-linux-android/release/libisar.so" "../../libisar_android_arm64.so"
+  mv "../../target/aarch64-linux-android/debug/libisar.so" "../../libisar_android_arm64.so"
 fi
