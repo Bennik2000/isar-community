@@ -37,30 +37,6 @@ jobs:
           - os: ubuntu-22.04
             artifact_name: libisar_android_arm64.so
             script: build_android.sh
-          - os: ubuntu-22.04
-            artifact_name: libisar_android_armv7.so
-            script: build_android.sh armv7
-          - os: ubuntu-22.04
-            artifact_name: libisar_android_x64.so
-            script: build_android.sh x64
-          - os: ubuntu-22.04
-            artifact_name: libisar_android_x86.so
-            script: build_android.sh x86
-          - os: macos-14
-            artifact_name: isar_ios.xcframework.zip
-            script: build_ios.sh
-          - os: ubuntu-22.04
-            artifact_name: libisar_linux_x64.so
-            script: build_linux.sh x64
-          - os: macos-14
-            artifact_name: libisar_macos.dylib
-            script: build_macos.sh
-          - os: windows-2022
-            artifact_name: isar_windows_arm64.dll
-            script: build_windows.sh
-          - os: windows-2022
-            artifact_name: isar_windows_x64.dll
-            script: build_windows.sh x64
     runs-on: ${{ matrix.os }}
     permissions:
       contents: write
