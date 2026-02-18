@@ -55,13 +55,13 @@ jobs:
           name: ${{ matrix.artifact_name }}
           path: ${{ matrix.artifact_name }}
           retention-days: 1
-      - name: Upload binary to release
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: ${{ matrix.artifact_name }}
-          asset_name: ${{ matrix.artifact_name }}
-          tag: ${{ github.ref }}
+      #- name: Upload binary to release
+      #  uses: svenstaro/upload-release-action@v2
+      #  with:
+      #    repo_token: ${{ secrets.GITHUB_TOKEN }}
+      #    file: ${{ matrix.artifact_name }}
+      #    asset_name: ${{ matrix.artifact_name }}
+      #    tag: ${{ github.ref }}
 
   #testlab:
   #  needs: build_binaries
